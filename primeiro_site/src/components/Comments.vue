@@ -1,23 +1,35 @@
 <template>
-  <div class="container">
-    <h1>Cadastro</h1>
-    <hr />
+
+  <div class="container nav-container">
+      <nav class="navbar nav-pills flex-column flex-sm-row">
+      <div class="container-fluid ">
+      <a class="navbar-brand" href="#" >
+        <img src="../assets/elpis.jpeg" alt="" width="50" height="24" class="d-inline-block align-top">
+        <!---pode escrever aqui--->
+      </a>
+      <button class="btn btn-light" type="submit">Sair</button>
+    </div>
+  </nav>
+
+    <div class="textos">
+    <p>Menu principal</p>
+    <h2>Bem vindo(a) !</h2>
+    <h2>O que vamos fazer hoje?</h2>
+    </div>
+
     <FormTodo v-on:add-todo="addComment"></FormTodo>
     <div class="list-group">
-    <p v-if="comments.length <= 0">Sem usuário...</p>
-    <div v-else class="list-group-item" v-for="(comment, index) in allComments" v-bind:key="index">
+    <div class="list-group-item col-md-9 col-md-push-3" v-for="(comment, index) in allComments" v-bind:key="index">
         <span class="comment__author">Autor: <strong>{{ comment.name }}</strong></span>
-        <p>{{ comment.email }}</p>
-        <p>{{ comment.cpf }}</p>
-        <p>{{ comment.senha }}</p>
-        <p>{{ comment.confirmarSenha }}</p>
+        <p>{{ comment.name }}</p>
         <div>
         <a href="#" title="Excluir" v-on:click.prevent="removeComment(index)">Excluir Usuário</a>
         </div>
     </div>
     </div>
-    <hr />
   </div>
+
+  
 </template>
 
 <script>
@@ -54,3 +66,25 @@ export default {
   }
 }
 </script>
+<style scoped>
+
+.container-fluid, .navbar{
+    background-color: #800000;
+}
+.textos{
+    color: #4e4e4e;
+    font-family: 'Roboto', sans-serif;
+}
+.btn{
+  color: #520303;
+  background-color: #f0eeee;
+  border-radius: 40px;
+  margin: 5;
+  width: 10%;
+  border: 0;
+}
+.btn:hover{
+  background-color: #520303;
+  color: #f0eeee;
+}
+</style>

@@ -1,0 +1,32 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    color: blue;
+    margin: 0px;
+}
+
+.row{
+    margin: 0px;
+}
+
+.container-fluid{
+    padding: 0px;
+    margin: 0px;
+}
+
+.container{
+    padding: 70px 0;
+    width: -5000px;
+    color: red-800;
+}
+
+p, li, h2{
+    color: rgb(89, 207, 34);
+    font-size: 14px;
+}
+
+head .navbar{
+    background-color: blue;
+}
+.text-center .bg-primary{
+    background-color: rgba(179, 162, 15, 0.2);
+}

@@ -1,21 +1,19 @@
 <template>
+
   <div class="form-todo form-group">
   <p>
-    <input placeholder="nome" type="text" name="author" class="form-control" v-model="name" />
+    <input placeholder="nome" type="text" name="author" class="form-control" id="foto" v-model="name" />
   </p>
   <p>
-    <input placeholder="Email" type="text"  name="email"  class="form-control" v-model="email" />
+    <input placeholder="email" type="text" name="email" class="form-control" id="foto" v-model="email" />
   </p>
   <p>
-    <input placeholder="CPF" type="text"  name="cpf"  class="form-control" v-model="cpf" />
+    <input placeholder="senha" type="text" name="senha" class="form-control" id="foto" v-model="senha" />
   </p>
   <p>
-    <input placeholder="Senha" type="text"  name="senha"  class="form-control" v-model="senha" />
+    <input placeholder="cpf" type="text" name="cpf" class="form-control" id="foto" v-model="cpf" />
   </p>
-  <p>
-    <input placeholder="Confirmar Senha" type="text"  name="confirmarSenha"  class="form-control" v-model="confirmarSenha" />
-  </p>
-  <button v-on:click="addComment" type="submit" class="btn btn-primary">Comentar</button>
+  <button type="submit" class="btn btn-dark" id="botao">Criar usuário</button>
   </div>
 </template>
 
@@ -24,39 +22,37 @@
     data() {
       return {
         name: '',
-        email: '',
-        cpf: '',
-        senha:'',
-        confirmarSenha: ''
       }
     },
     methods: {
       addComment() {
-        if (this.email.trim() === '') {
+        if (this.name.trim() === '') {
           return;
         }
-        if (this.cpf.trim() === ''){
-            return;
-        }
-        if (this.senha.trim() === ''){
-            return;
-        }
-        if (this.confirmarSenha.trim() === ''){
-            return;
-        }
+        
         this.$emit('add-todo', {
           name: this.name,
-          email: this.email,
-          cpf: this.cpf,
-          senha: this.senha,
-          confirmarSenha: this.confirmarSenha,
         });
         this.name = '';
-        this.email = '';
-        this.cpf = '';
-        this.senha = '';
-        this.confirmarSenha = '';
       }
     }
   }
 </script>
+<style>
+#botao{
+  color: #f0eeee;
+  background-color: #800000;
+  border-radius: 40px;
+  margin: 0;
+  width: 150px;
+  border: 0;
+}
+#botao:hover{
+  background-color: #520303;
+  color: #f0eeee;
+}
+#foto{
+  max-width: 400px;
+}
+
+</style>

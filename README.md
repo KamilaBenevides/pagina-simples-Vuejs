@@ -16,3 +16,6 @@ O VueCli irá criar uma pasta com seu projeto, entre nela e execute:
 npm run serve
 ```
 Abra no navegador: http://localhost:8080/
+
+site da API usada: https://pokeapi.co/
+no campo para a requisição, use: pokemon?limit=151&offset=0

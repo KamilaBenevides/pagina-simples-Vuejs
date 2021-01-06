@@ -8,8 +8,9 @@ Na mesma pasta, execute o comando para criar a aplicação:
 ```
 vue ui
 ```
-Abrirá uma página no navegador, crie um novo projeto, em gerenciador de pacotes, escolha 'npm'. Em definição, marque 'definição padrão'
-o VueCli irá criar uma pasca com seu projeto, entre nela e execute:
+Abrirá uma página no navegador, crie um novo projeto, em gerenciador de pacotes, escolha 'npm'. Em definição, marque 'definição padrão'.
+
+O VueCli irá criar uma pasta com seu projeto, entre nela e execute:
 
 ```
 npm run serve

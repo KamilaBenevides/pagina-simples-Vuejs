@@ -2,15 +2,16 @@
 Instalar o VueCli:
 
 ```
-npm install -g @vue/devtools
+npm install -g @vue/cli
 ```
-Para executar a aplicação:
+Na mesma pasta, execute o comando para criar a aplicação:
 ```
 vue ui
 ```
-depois de criar o projeto,
-Na pasta vuejs-cli execute:
+Abrirá uma página no navegador, crie um novo projeto, em gerenciador de pacotes, escolha 'npm'. Em definição, marque 'definição padrão'
+o VueCli irá criar uma pasca com seu projeto, entre nela e execute:
+
 ```
 npm run serve
 ```
-Abrir no navegador: http://localhost:8080/
+Abra no navegador: http://localhost:8080/

@@ -1,41 +1,50 @@
 <template>
 
   <div class="form-todo form-group">
-  <p>
-    <input placeholder="nome" type="text" name="author" class="form-control" id="foto" v-model="name" />
-  </p>
-  <p>
-    <input placeholder="email" type="text" name="email" class="form-control" id="foto" v-model="email" />
-  </p>
-  <p>
-    <input placeholder="senha" type="text" name="senha" class="form-control" id="foto" v-model="senha" />
-  </p>
-  <p>
-    <input placeholder="cpf" type="text" name="cpf" class="form-control" id="foto" v-model="cpf" />
-  </p>
-  <button type="submit" class="btn btn-dark" id="botao">Criar usuário</button>
-  </div>
+      <p>
+        <input placeholder="poke" type="text" poke="author" class="form-control" id="foto" v-model="poke" />
+      </p>
+      <button v-on:click="addComment" type="submit" class="btn btn-dark" id="botao">Buscar Pokemon</button>
+    </div>
+  
+
 </template>
 
 <script>
+  import axios from 'axios';
   export default {
     data() {
       return {
-        name: '',
+        poke: '',
+        url: '', 
+        str: 0,
+        pokemons: []
       }
     },
     methods: {
       addComment() {
-        if (this.name.trim() === '') {
+        if (this.poke.trim() === '') {
           return;
         }
-        
-        this.$emit('add-todo', {
-          name: this.name,
-        });
-        this.name = '';
-      }
-    }
+        for(var i = 0 ; i < 151; i++){
+          if(this.pokemons[i].name === this.poke)
+            this.str = i;
+        }
+
+         this.$emit('add-todo', {
+          poke: this.pokemons[this.str].name,
+          url: this.pokemons[this.str].url
+         });
+         this.poke = '';
+         this.url = '';
+        }
+    },
+       created: function(){
+       axios.get("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0").then(res =>{
+         //console.log(res.data.results);
+         this.pokemons = res.data.results;
+       })
+     }
   }
 </script>
 <style>

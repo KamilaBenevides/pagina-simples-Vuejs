@@ -4,8 +4,8 @@
       <nav class="navbar nav-pills flex-column flex-sm-row">
       <div class="container-fluid ">
       <a class="navbar-brand" href="#" >
-        <img src="../assets/elpis.jpeg" alt="" width="50" height="24" class="d-inline-block align-top">
-        <!---pode escrever aqui--->
+        <!---<img src="../assets/..." alt="" width="50" height="24" class="d-inline-block align-top"> --->
+        Inicio
       </a>
       <button class="btn btn-light" type="submit">Sair</button>
     </div>
@@ -20,8 +20,10 @@
     <FormTodo v-on:add-todo="addComment"></FormTodo>
     <div class="list-group">
     <div class="list-group-item col-md-9 col-md-push-3" v-for="(comment, index) in allComments" v-bind:key="index">
-        <span class="comment__author">Autor: <strong>{{ comment.name }}</strong></span>
-        <p>{{ comment.name }}</p>
+        <span class="comment__author">Name: <strong>{{ comment.poke }}</strong></span>
+        <p>{{ comment.poke }}</p>
+        <span class="comment__author">Url: <strong>{{ comment.url }}</strong></span>
+        <p>{{ comment.poke }}</p>
         <div>
         <a href="#" title="Excluir" v-on:click.prevent="removeComment(index)">Excluir Usuário</a>
         </div>
@@ -34,13 +36,14 @@
 
 <script>
 import FormTodo from './FormTodo';
+
 export default {
   components: {
     FormTodo
   },
   data() {
     return {
-      comments: []
+      comments: [],
     }
   },
   methods: {
@@ -55,7 +58,7 @@ export default {
     allComments() {
       return this.comments.map(comment => ({
         ...comment,
-        name: comment.name.trim() === '' ? 'Anônimo' : comment.name
+        poke: comment.poke.trim() === '' ? 'Anônimo' : comment.poke
       }))
     }
   },
@@ -63,7 +66,7 @@ export default {
     comments(val) {
       console.log('val', val)
     }
-  }
+  },
 }
 </script>
 <style scoped>

@@ -1,16 +1,17 @@
 <template>
   <div id="app">
-    <Comments />
+   <description /> 
   </div>
 </template>
 
 <script>
-  import Comments from './components/Comments'
+  import description from './components/description'
   export default {
     name: 'app',
     components: {
-      Comments,
-    }
+      description,
+    },
+
   }
 </script>
 
